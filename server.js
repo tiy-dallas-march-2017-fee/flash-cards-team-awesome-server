@@ -2,11 +2,13 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.load();
 
 const app = express();
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost:27020/data')
+mongoose.connect(process.env.MONGO_CONNECT);
 
 
 app.use((req, res, next) => {
