@@ -17,7 +17,6 @@ app.use((req, res, next) => {
     next();
 });
 
-
 // Need to be able to post info
 app.use(bodyParser.urlencoded({ extended: false }))
 
